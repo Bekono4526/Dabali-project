@@ -1,42 +1,27 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
-    const handleLinkClick = (id) => {
+    const handleLinkClick = () => {
         setIsOpen(false);
-        const section = document.getElementById(id);
-        if (section) {
-            window.scrollTo({
-                top: section.offsetTop,
-                behavior: 'smooth'
-            });
-        }
     };
 
     return (
-        <header className='flex justify-between items-center p-4 md:p-6 bg-dark-purple text-white fixed top-0 w-full z-50'>
-            <h1 
-                className="text-2xl font-bold text-white font-custom cursor-pointer"
-                onClick={() => handleLinkClick('about')}
-            >
+        <header className='flex justify-between items-center p-4 md:p-6 bg-dark-purple text-white w-full z-50 mb-4'>
+            <h1 className="text-2xl font-bold text-white font-custom cursor-pointer">
                 Bekono Sophie
             </h1>
             
             <nav className='hidden md:flex font-custom'>
                 <ul className='flex gap-8'>
                     <li className='p-2 px-4 rounded-lg hover:bg-gray-800 transition-colors duration-300'>
-                        <a href="#about" onClick={() => handleLinkClick('about')}>About me</a>
+                        <Link to="/" onClick={handleLinkClick}>Home</Link>
                     </li>
                     <li className='p-2 px-4 rounded-lg hover:bg-gray-800 transition-colors duration-300'>
-                        <a href="#skills" onClick={() => handleLinkClick('skills')}>Skills</a>
-                    </li>
-                    <li className='p-2 px-4 rounded-lg hover:bg-gray-800 transition-colors duration-300'>
-                        <a href="#projets" onClick={() => handleLinkClick('projets')}>Projets</a>
-                    </li>
-                    <li className='p-2 px-4 rounded-lg hover:bg-gray-800 transition-colors duration-300'>
-                        <a href="#contact" onClick={() => handleLinkClick('contact')}>Contact</a>
+                        <Link to="/about" onClick={handleLinkClick}>About me</Link>
                     </li>
                 </ul>
             </nav>
@@ -49,22 +34,17 @@ function Header() {
             </button>
 
             <div
-                className={`fixed inset-0 bg-dark-purple z-40 transform transition-transform duration-300 ease-in-out ${
+                className={`absolute inset-0 bg-dark-purple z-40 transform transition-transform duration-300 ease-in-out ${
                     isOpen ? "translate-x-0" : "-translate-x-full"
                 } md:hidden`}
                 style={{ width: "80%" }}
             >
                 <div className="flex flex-col items-start p-4 space-y-4 text-white font-custom">
-                    <h1 
-                        className="text-2xl font-bold text-white mb-6 cursor-pointer"
-                        onClick={() => handleLinkClick('about')}
-                    >
+                    <h1 className="text-2xl font-bold text-white mb-6 cursor-pointer">
                         Bekono Sophie
                     </h1>
-                    <a href="#about" className='w-full py-2 hover:bg-gray-800' onClick={() => handleLinkClick('about')}>About me</a>
-                    <a href="#skills" className='w-full py-2 hover:bg-gray-800' onClick={() => handleLinkClick('skills')}>Skills</a>
-                    <a href="#projets" className='w-full py-2 hover:bg-gray-800' onClick={() => handleLinkClick('projets')}>Projets</a>
-                    <a href="#contact" className='w-full py-2 hover:bg-gray-800' onClick={() => handleLinkClick('contact')}>Contact</a>
+                    <Link to="/" className='w-full py-2 hover:bg-gray-800' onClick={handleLinkClick}>Home</Link>
+                    <Link to="/about" className='w-full py-2 hover:bg-gray-800' onClick={handleLinkClick}>About me</Link>
                 </div>
             </div>
         </header>
