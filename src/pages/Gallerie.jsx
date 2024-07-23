@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 function Gallerie() {
     const initialImages = [
-        'path/to/image1.jpg',
-        'path/to/image2.jpg',
+        'im1.png',
+        'cute.webp',
         'path/to/image3.jpg',
         // Ajoutez plus de chemins d'images ici
     ];

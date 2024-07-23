@@ -264,7 +264,7 @@ function Menu() {
                 </div>
             )}
 
-{/* Pop-up pour le panier */}
+ {/* Pop-up pour le panier */}
 {showCart && (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
         <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3 max-h-screen overflow-y-auto">
@@ -278,83 +278,77 @@ function Menu() {
                     Fermer
                 </button>
             </div>
-            <div className="flex">
-                <div className="w-1/2 pr-4">
-                    <div className="border-t border-gray-300 py-4">
-                        <h3 className="text-xl font-semibold mb-2">Contact</h3>
-                        <button className="bg-gray-200 text-black px-4 py-2 rounded-md w-full text-left">
-                            Ajouter détails
-                        </button>
-                    </div>
 
-                    <div className="border-t border-gray-300 py-4">
-                        <h3 className="text-xl font-semibold mb-2">Option de Commande</h3>
-                        <button className="bg-gray-200 text-black px-4 py-2 rounded-md w-full text-left">
-                            Choisir un mode de commande
-                        </button>
-                    </div>
-
-                    <div className="border-t border-gray-300 py-4">
-                        <h3 className="text-xl font-semibold mb-2">Choisissez l'Heure</h3>
-                        <button className="bg-gray-200 text-black px-4 py-2 rounded-md w-full text-left">
-                            Régler le temps
-                        </button>
-                    </div>
-
-                    <div className="border-t border-gray-300 py-4">
-                        <h3 className="text-xl font-semibold mb-2">Mode de Paiement</h3>
-                        <button className="bg-gray-200 text-black px-4 py-2 rounded-md w-full text-left">
-                            Choisir un mode de paiement
-                        </button>
+            <div className="border-t border-gray-300 py-4">
+                <div className="flex justify-between items-center">
+                    <div className="flex items-center">
+                        <FiShoppingCart className="text-2xl mr-2" />
+                        <span className="text-xl">{cart.length} articles</span>
                     </div>
                 </div>
+            </div>
 
-                <div className="w-1/2 pl-4">
-                    <div className="border-t border-gray-300 py-4">
-                        <div className="flex justify-between items-center">
-                            <div className="flex items-center">
-                                <FiShoppingCart className="text-2xl mr-2" />
-                                <span className="text-xl">{cart.length} articles</span>
-                            </div>
-                        </div>
-                    </div>
+            <div className="border-t border-gray-300 py-4">
+                <h3 className="text-xl font-semibold mb-2">Contact</h3>
+                <button className="bg-gray-200 text-black px-4 py-2 rounded-md w-full text-left">
+                    Ajouter détails
+                </button>
+            </div>
 
-                    <ul className="mb-6 border-t border-gray-300 py-4">
-                        {cart.length === 0 ? (
-                            <li className="text-center text-gray-500">Votre panier est vide</li>
-                        ) : (
-                            cart.map((item, index) => (
-                                <li key={index} className="flex justify-between items-center text-lg mb-2">
-                                    <span>{item.name}</span>
-                                    <span>{item.price} FCFA</span>
-                                    <button
-                                        onClick={() => removeFromCart(index)}
-                                        className="bg-red-500 text-white px-2 py-1 rounded-md flex items-center"
-                                    >
-                                        <FiX className="mr-2" />
-                                        Retirer
-                                    </button>
-                                </li>
-                            ))
-                        )}
-                    </ul>
+            <div className="border-t border-gray-300 py-4">
+                <h3 className="text-xl font-semibold mb-2">Option de Commande</h3>
+                <button className="bg-gray-200 text-black px-4 py-2 rounded-md w-full text-left">
+                    Choisir un mode de commande
+                </button>
+            </div>
 
-                    <div className="border-t border-gray-300 py-4 flex justify-between items-center">
-                        <span className="text-2xl font-bold">Total: {getTotal()} FCFA</span>
-                        <button
-                            onClick={() => alert('Paiement non encore implémenté')}
-                            className="bg-blue-500 text-white px-4 py-2 rounded-md flex items-center"
-                        >
-                            <FiCheckCircle className="mr-2" />
-                            Payer
-                        </button>
-                    </div>
-                </div>
+            <div className="border-t border-gray-300 py-4">
+                <h3 className="text-xl font-semibold mb-2">Choisissez l'Heure</h3>
+                <button className="bg-gray-200 text-black px-4 py-2 rounded-md w-full text-left">
+                    Régler le temps
+                </button>
+            </div>
+
+            <div className="border-t border-gray-300 py-4">
+                <h3 className="text-xl font-semibold mb-2">Mode de Paiement</h3>
+                <button className="bg-gray-200 text-black px-4 py-2 rounded-md w-full text-left">
+                    Choisir un mode de paiement
+                </button>
+            </div>
+
+            <ul className="mb-6 border-t border-gray-300 py-4">
+                {cart.length === 0 ? (
+                    <li className="text-center text-gray-500">Votre panier est vide</li>
+                ) : (
+                    cart.map((item, index) => (
+                        <li key={index} className="flex justify-between items-center text-lg mb-2">
+                            <span>{item.name}</span>
+                            <span>{item.price} FCFA</span>
+                            <button
+                                onClick={() => removeFromCart(index)}
+                                className="bg-red-500 text-white px-2 py-1 rounded-md flex items-center"
+                            >
+                                <FiX className="mr-2" />
+                                Retirer
+                            </button>
+                        </li>
+                    ))
+                )}
+            </ul>
+
+            <div className="border-t border-gray-300 py-4 flex justify-between items-center">
+                <span className="text-2xl font-bold">Total: {getTotal()} FCFA</span>
+                <button
+                    onClick={() => alert('Paiement non encore implémenté')}
+                    className="bg-blue-500 text-white px-4 py-2 rounded-md flex items-center"
+                >
+                    <FiCheckCircle className="mr-2" />
+                    Payer
+                </button>
             </div>
         </div>
     </div>
 )}
-
 
 
         </main>
