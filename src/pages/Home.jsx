@@ -3,6 +3,7 @@ import Banner from '../components/Banner';
 import FooterMenu from '../components/FooterMenu';
 import Card from '../components/Card'; // Adjust the import path if needed
 import Footer from '../components/Footer'; // Adjust the import path if needed
+import CommentCard from '../components/CommentCard'; // Adjust the import path if needed
 
 function Home() {
   const images = [
@@ -57,6 +58,9 @@ function Home() {
               </div>
             ))}
           </div>
+        </section>
+        <section>
+<CommentCard />
         </section>
       </main>
       <footer className="relative z-10">
