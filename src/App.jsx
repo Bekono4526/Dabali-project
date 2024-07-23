@@ -4,6 +4,7 @@ import About from './pages/About';
 import Home from './pages/Home';
 import ArticlePage from './pages/ArticlePage';
 import Header from './components/Header';
+import DabaliTraiteur from './pages/DabaliTraiteur';
 
 import { articles } from './articles';
 import './index.css'; // Assurez-vous d'importer le fichier CSS principal
@@ -15,6 +16,7 @@ function App() {
         <Header className="header-container" />
         <div className="main-content">
           <Routes>
+          <Route path="/traiteur" element={<DabaliTraiteur />} />
             <Route path="/about" element={<About />} />
             <Route path="/" element={<Home articles={articles} />} />
             <Route path="/article/:id" element={<ArticlePage articles={articles} />} />

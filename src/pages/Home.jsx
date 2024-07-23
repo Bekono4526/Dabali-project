@@ -40,10 +40,6 @@ function Home() {
         <Banner />
       </header>
       <main className='flex-grow relative z-10'>
-        <section className="content-container p-6 md:p-8">
-          <h2>Welcome to my website</h2>
-          <p>This is the Home page content.</p>
-        </section>
         <section className="flex justify-center gap-4 p-6 md:p-8">
           {images.map((imageUrl, index) => (
             <Card key={index} imageUrl={imageUrl} />

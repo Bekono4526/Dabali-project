@@ -42,6 +42,9 @@ function Header() {
                         <li className={`p-2 px-4 rounded-lg hover:bg-gray-800 transition-colors duration-300 ${scrolled ? 'text-vert' : 'text-white'}`}>
                             <Link to="/about" onClick={handleLinkClick}>About me</Link>
                         </li>
+                        <li className={`p-2 px-4 rounded-lg hover:bg-gray-800 transition-colors duration-300 ${scrolled ? 'text-vert' : 'text-white'}`}>
+                            <Link to="/traiteur" onClick={handleLinkClick}>Dabali traiteur</Link>
+                        </li>
                     </ul>
                 </nav>
 
@@ -65,6 +68,7 @@ function Header() {
                     </h1>
                     <Link to="/" className='w-full py-2 hover:bg-gray-800' onClick={handleLinkClick}>Home</Link>
                     <Link to="/about" className='w-full py-2 hover:bg-gray-800' onClick={handleLinkClick}>About me</Link>
+                    <Link to="/traiteur" className='w-full py-2 hover:bg-gray-800' onClick={handleLinkClick}>Dabali traiteur</Link>
                 </div>
             </div>
         </header>
