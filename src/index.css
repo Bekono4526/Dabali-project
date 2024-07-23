@@ -22,6 +22,11 @@ html, body {
     overflow: hidden; /* Assure que le contenu reste fixe */
 }
 
+.main-content {
+    flex: 1;
+    overflow-y: auto; /* Permet le défilement vertical à l'intérieur du conteneur principal */
+}
+
 .footer-menu-container {
     background-color: #2d2d2d;
     color: white;
@@ -29,11 +34,19 @@ html, body {
     bottom: 0;
     left: 0;
     right: 0;
-    position: fixed;
+    position: fixed; /* Reste fixé en bas de la fenêtre */
     z-index: 50;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.footer {
+    background-color: #2c2c54; /* Couleur du footer */
+    color: white;
+    text-align: center;
+    padding: 5rem;
+    width: 100%;
 }
 
 .header-container {
@@ -52,7 +65,7 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 24rem; /* Height of the banner */
+    height: 20rem; /* Height of the banner */
 }
 
 .content-container {
@@ -65,3 +78,131 @@ img, video {
     max-width: 100%;
     height: auto;
 }
+/* code des 3 cartes*/
+.card {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    max-width: 300px;
+    height: 350px;
+    border-radius: 5px;
+    padding: 2rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 7.5px;
+    transition: transform 0.5s ease;
+    color: white;
+  }
+  
+  .card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  }
+  
+  .card:hover::after {
+    opacity: 0.25;
+  }
+  
+  .card:hover .details {
+    transform: translateY(0%);
+    transition-delay: 0.5s;
+  }
+  
+  .card:hover {
+    transform: scale(1.1);
+    border-radius: 15px;
+  }
+  
+  .details {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-out;
+  }
+  
+  .cardHeader::after {
+    content: "";
+    width: calc(100% + 1rem);
+    height: 2.5px;
+    transform: translateX(calc(-100% - 1rem));
+    background: aqua;
+    bottom: -5px;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .card:hover .cardHeader::after {
+    transform: translateX(-1rem);
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    opacity: 1;
+  }
+  /* code pour articles*/
+  .article-content p {
+    margin-bottom: 1rem;
+  }
+  
+  .article-content img.article-image {
+    margin-bottom: 1rem;
+    max-width: 100%;
+    border-radius: 0.5rem;
+  }
+
+  /*code slide */
+
+  @keyframes slide-left {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-right {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+.banner-container {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+}
+
+.banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide-in {
+    animation: slide-left 1s forwards;
+}
+
+.slide-out {
+    animation: slide-right 1s forwards;
+}
+

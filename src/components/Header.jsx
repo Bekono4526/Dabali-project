@@ -1,3 +1,4 @@
+// src/components/Header.jsx
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
@@ -11,18 +12,18 @@ function Header() {
     };
 
     useEffect(() => {
+        const mainContent = document.querySelector('.main-content');
         const handleScroll = () => {
-            console.log('Window scrollY:', window.scrollY);
-            if (window.scrollY > 50) {
+            if (mainContent.scrollTop > 50) {
                 setScrolled(true);
             } else {
                 setScrolled(false);
             }
         };
 
-        window.addEventListener('scroll', handleScroll);
+        mainContent.addEventListener('scroll', handleScroll);
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            mainContent.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
