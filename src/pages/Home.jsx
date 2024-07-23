@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   const images = [
-    'url-to-your-first-image.jpg',
+    'cute.webp',
     'url-to-your-second-image.jpg',
     'url-to-your-third-image.jpg',
   ];
