@@ -35,7 +35,7 @@ function Header() {
                 </h1>
                 
                 <nav className='hidden md:flex font-custom'>
-                    <ul className='flex gap-8'>
+                    <ul className='flex items-center gap-8'>
                         <li className={`p-2 px-4 rounded-lg hover:bg-gray-800 transition-colors duration-300 ${scrolled ? 'text-vert' : 'text-white'}`}>
                             <Link to="/" onClick={handleLinkClick}>Home</Link>
                         </li>
@@ -44,6 +44,18 @@ function Header() {
                         </li>
                         <li className={`p-2 px-4 rounded-lg hover:bg-gray-800 transition-colors duration-300 ${scrolled ? 'text-vert' : 'text-white'}`}>
                             <Link to="/traiteur" onClick={handleLinkClick}>Dabali traiteur</Link>
+                        </li>
+                        <li className={`p-2 px-4 rounded-lg hover:bg-gray-800 transition-colors duration-300 ${scrolled ? 'text-vert' : 'text-white'}`}>
+                            <Link to="/menu" onClick={handleLinkClick}>Menu</Link>
+                        </li>
+                        <li className={`p-2 px-4 rounded-lg hover:bg-gray-800 transition-colors duration-300 ${scrolled ? 'text-vert' : 'text-white'}`}>
+                            <Link to="/franchise" onClick={handleLinkClick}>Franchise</Link>
+                        </li>
+                        <li className={`p-2 px-4 rounded-lg hover:bg-gray-800 transition-colors duration-300 ${scrolled ? 'text-vert' : 'text-white'}`}>
+                            <Link to="/gallerie" onClick={handleLinkClick}>Gallerie</Link>
+                        </li>
+                        <li className={`p-2 px-4 rounded-lg hover:bg-gray-800 transition-colors duration-300 ${scrolled ? 'text-vert' : 'text-white'}`}>
+                            <Link to="/contact" onClick={handleLinkClick}>Contact</Link>
                         </li>
                     </ul>
                 </nav>
@@ -62,13 +74,17 @@ function Header() {
                 } md:hidden`}
                 style={{ width: "80%", backgroundColor: "rgba(45, 45, 45, 0.9)" }}
             >
-                <div className="flex flex-col items-start p-4 space-y-4 text-white font-custom">
+                <div className="flex flex-col items-start p-4 space-y-4 text-white font-custom bg-dark-purple">
                     <h1 className="text-2xl font-bold text-white mb-6 cursor-pointer">
                         Bekono Sophie
                     </h1>
                     <Link to="/" className='w-full py-2 hover:bg-gray-800' onClick={handleLinkClick}>Home</Link>
                     <Link to="/about" className='w-full py-2 hover:bg-gray-800' onClick={handleLinkClick}>About me</Link>
                     <Link to="/traiteur" className='w-full py-2 hover:bg-gray-800' onClick={handleLinkClick}>Dabali traiteur</Link>
+                    <Link to="/menu" className='w-full py-2 hover:bg-gray-800' onClick={handleLinkClick}>Menu</Link>
+                    <Link to="/franchise" className='w-full py-2 hover:bg-gray-800' onClick={handleLinkClick}>Franchise</Link>
+                    <Link to="/gallerie" className='w-full py-2 hover:bg-gray-800' onClick={handleLinkClick}>Gallerie</Link>
+                    <Link to="/contact" className='w-full py-2 hover:bg-gray-800' onClick={handleLinkClick}>Contact</Link>
                 </div>
             </div>
         </header>
