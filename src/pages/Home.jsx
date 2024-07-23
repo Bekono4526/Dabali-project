@@ -3,7 +3,8 @@ import Banner from '../components/Banner';
 import FooterMenu from '../components/FooterMenu';
 import Card from '../components/Card'; // Adjust the import path if needed
 import Footer from '../components/Footer'; // Adjust the import path if needed
-import CommentCard from '../components/CommentCard'; // Adjust the import path if needed
+import Comments from '../components/Comments'; // Adjust the import path if needed
+import { Link } from 'react-router-dom';
 
 function Home() {
   const images = [
@@ -14,16 +15,19 @@ function Home() {
 
   const articles = [
     {
+      id: 1,
       title: 'Article 1',
       content: 'This is a brief summary of the first article.',
       imageUrl: 'url-to-article-image1.jpg',
     },
     {
+      id: 2,
       title: 'Article 2',
       content: 'This is a brief summary of the second article.',
       imageUrl: 'url-to-article-image2.jpg',
     },
     {
+      id: 3,
       title: 'Article 3',
       content: 'This is a brief summary of the third article.',
       imageUrl: 'url-to-article-image3.jpg',
@@ -54,13 +58,14 @@ function Home() {
                 <div className="p-4">
                   <h3 className="text-lg font-semibold mb-2">{article.title}</h3>
                   <p>{article.content}</p>
+                  <Link to={`/article/${article.id}`} className="text-blue-500 hover:underline">Read More</Link>
                 </div>
               </div>
             ))}
           </div>
         </section>
-        <section>
-<CommentCard />
+        <section className='flex'>
+          <Comments />
         </section>
       </main>
       <footer className="relative z-10">
