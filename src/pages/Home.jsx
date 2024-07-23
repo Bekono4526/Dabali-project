@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   const images = [
-    'cute.webp',
-    'url-to-your-second-image.jpg',
-    'url-to-your-third-image.jpg',
+    'PROMO-COUPONS-.png',
+    'PROMOTION-1.png',
+    'menu.png',
   ];
 
   const articles = [

@@ -4,19 +4,19 @@ import React, { useState, useEffect } from 'react';
 function Banner() {
     const images = [
         { 
-            url: 'im1.png', 
+            url: 'dabali1.jpg', 
             title: 'Image 1', 
             description: 'This is the first image.', 
             link: '#link1' 
         },
         { 
-            url: 'im1.png', 
+            url: 'dabali2.jpg', 
             title: 'Image 2', 
             description: 'This is the second image.', 
             link: '#link2' 
         },
         { 
-            url: 'im1.png', 
+            url: 'dabali5.jpg', 
             title: 'Image 3', 
             description: 'This is the third image.', 
             link: '#link3' 
