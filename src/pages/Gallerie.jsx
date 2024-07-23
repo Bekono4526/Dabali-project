@@ -38,8 +38,8 @@ function Gallerie() {
                                 transform: `translateX(${offset * 30}px) scale(${scale})`,
                                 zIndex: zIndex,
                                 opacity: opacity,
-                                width: '500px', // Largeur fixe
-                                height: '350px' // Hauteur fixe
+                                width: '550px', // Largeur fixe
+                                height: '400px' // Hauteur fixe
                             }}
                         >
                             <img src={image} alt={`Gallery ${index + 1}`} className="w-full h-full object-cover rounded-md shadow-md" />
@@ -48,7 +48,7 @@ function Gallerie() {
                 })}
               
             </div>
-            <div className="flex justify-center mb-4">
+            <div className="flex justify-center mt-6">
                 <button onClick={moveBackward} className="px-4 py-2 bg-blue-500 text-white rounded mr-2">Précédent</button>
                 <button onClick={moveForward} className="px-4 py-2 bg-blue-500 text-white rounded">Suivant</button>
             </div>

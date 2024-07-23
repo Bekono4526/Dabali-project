@@ -24,7 +24,7 @@ function Comments() {
   ];
 
   return (
-    <div className=" flex flex-wrap gap-4 px-2 ">
+    <div className=" flex flex-wrap items-center gap-8 px-6 ml-40 ">
       {comments.map((comment, index) => (
         <CommentCard
           key={index}
