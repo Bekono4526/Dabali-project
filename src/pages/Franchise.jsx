@@ -1,4 +1,5 @@
 import React from 'react';
+import HeaderPages from '../components/HeaderPages';
 
 function Franchise() {
     const sections = [
@@ -45,6 +46,7 @@ function Franchise() {
 
     return (
         <main className="bg-gray-100 p-10 mt-20">
+            <HeaderPages />
             {sections.map((section, index) => (
                 <section key={index} className={`bg-white p-8 rounded-lg shadow-md mb-8 flex flex-col md:flex-row ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                     {section.image && (

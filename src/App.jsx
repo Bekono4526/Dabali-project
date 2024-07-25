@@ -17,7 +17,7 @@ function App() {
   return (
     <div id="root" className="app-container">
       <Router>
-        <Header className="header-container" />
+       
         <div className="main-content">
           <Routes>
           <Route path="/contact" element={<Contact />} />

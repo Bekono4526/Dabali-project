@@ -1,8 +1,12 @@
 import React from 'react';
+import HeaderPages from '../components/HeaderPages';
 
 function Contact() {
     return (
         <main className="bg-gray-100 p-10 mt-20">
+            <HeaderPages />
+            
+            {/* Formulaire de contact */}
             <section className="bg-white p-8 rounded-lg shadow-md mb-8">
                 <h2 className="text-3xl font-bold mb-4">Contactez-nous</h2>
                 <p className="text-lg text-gray-700 mb-6">

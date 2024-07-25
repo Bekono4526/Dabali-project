@@ -1,9 +1,12 @@
 import React from 'react';
 import Footer from '../components/Footer';
+import HeaderPages from '../components/HeaderPages';
 
 function About() {
     return (
+        
         <main className="bg-gray-100 mt-20">
+<HeaderPages />
             {/* Section 1: Image and Company History */}
             <section className="flex flex-col md:flex-row items-center justify-between p-10 bg-white shadow-md">
                 <div className="md:w-1/2">
