@@ -7,10 +7,25 @@ import Comments from '../components/Comments'; // Adjust the import path if need
 import { Link } from 'react-router-dom';
 
 function Home() {
-  const images = [
-    'PROMO-COUPONS-.png',
-    'PROMOTION-1.png',
-    'menu.png',
+  const cards = [
+    {
+      imageUrl: 'PROMO-COUPONS-.png',
+      headerText: 'Promotion Coupons',
+      cardText: 'Discover amazing discounts with our exclusive promo coupons.',
+      buttonText: 'Get Coupons'
+    },
+    {
+      imageUrl: 'PROMOTION-1.png',
+      headerText: 'Special Promotion',
+      cardText: 'Check out our special promotion on a wide range of products.',
+      buttonText: 'Shop Now'
+    },
+    {
+      imageUrl: 'menu.png',
+      headerText: 'Our Menu',
+      cardText: 'Explore our delicious menu filled with a variety of dishes.',
+      buttonText: 'View Menu'
+    }
   ];
 
   const articles = [
@@ -18,19 +33,19 @@ function Home() {
       id: 1,
       title: 'Article 1',
       content: 'This is a brief summary of the first article.',
-      imageUrl: 'url-to-article-image1.jpg',
+      imageUrl: 'dabali1.jpg',
     },
     {
       id: 2,
       title: 'Article 2',
       content: 'This is a brief summary of the second article.',
-      imageUrl: 'url-to-article-image2.jpg',
+      imageUrl: 'dabali2.jpg',
     },
     {
       id: 3,
       title: 'Article 3',
       content: 'This is a brief summary of the third article.',
-      imageUrl: 'url-to-article-image3.jpg',
+      imageUrl: 'dabali4.jpg',
     },
   ];
 
@@ -40,9 +55,15 @@ function Home() {
         <Banner />
       </header>
       <main className='flex-grow relative z-10'>
-        <section className="flex justify-center gap-4 p-6 md:p-8">
-          {images.map((imageUrl, index) => (
-            <Card key={index} imageUrl={imageUrl} />
+        <section className="flex justify-center gap-6 p-6 md:p-8 mt-10">
+          {cards.map((card, index) => (
+            <Card
+              key={index}
+              imageUrl={card.imageUrl}
+              headerText={card.headerText}
+              cardText={card.cardText}
+              buttonText={card.buttonText}
+            />
           ))}
         </section>
         <section className="content-container p-6 md:p-8">
@@ -60,9 +81,25 @@ function Home() {
             ))}
           </div>
         </section>
-        <section className='flex'>
+        <section className='flex mt-4'>
           <Comments />
         </section>
+        <section className="flex flex-col md:flex-row items-stretch justify-between p-10 bg-white shadow-md">
+                <div className="md:w-1/2 flex-shrink-0">
+                    <div className="h-full bg-gray-200 flex items-center justify-center">
+                        <img src="path/to/your/service-image.jpg" alt="Traiteur Service" className="w-full h-auto rounded-md object-cover" />
+                    </div>
+                </div>
+                <div className="md:w-1/2 bg-gray-100 p-6 flex flex-col justify-center">
+                    <h2 className="text-3xl font-bold mb-4 text-center md:text-left">DABALI XPRESS TRAITEUR</h2>
+                    <p className="text-lg text-gray-700 mb-4">
+                        Reception Anniversaire Baptême  Mariage  Séminaire  After-work
+                    </p>
+                    <p className="text-lg text-gray-700">
+                        Contactez-nous au <span className="font-bold">2522018760</span>
+                    </p>
+                </div>
+            </section>
       </main>
       <footer className="relative z-10">
         <Footer />
