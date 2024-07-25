@@ -84,20 +84,17 @@ function Home() {
         <section className='flex mt-4'>
           <Comments />
         </section>
-        <section className="flex flex-col md:flex-row items-stretch justify-between p-10 bg-white shadow-md">
-                <div className="md:w-1/2 flex-shrink-0">
-                    <div className="h-full bg-gray-200 flex items-center justify-center">
-                        <img src="path/to/your/service-image.jpg" alt="Traiteur Service" className="w-full h-auto rounded-md object-cover" />
+        <section className="bg-white p-8 rounded-lg shadow-md mb-8 flex">
+                <img src="path_to_image" alt="Franchise Dabali Xpress" className="w-1/2 h-auto object-cover rounded-lg mr-4"/>
+                <div className="flex flex-col justify-center">
+                    <h2 className="text-3xl font-bold mb-4">Pourquoi devenir franchisé Dabali Xpress</h2>
+                    <p className="text-lg text-gray-700 mb-6">
+                        <strong>Devenir franchise DABALI XPRESS c’est être la vitrine moderne du tourisme culinaire ivoirien et un acteur engagé dans le développement local.</strong>
+                    </p>
+                    <div className="flex justify-between">
+                        <button className="bg-red-500 text-white px-4 py-2 rounded-md">Nous contacter</button>
+                        <button className="bg-blue-500 text-white px-4 py-2 rounded-md">Télécharger la brochure ici</button>
                     </div>
-                </div>
-                <div className="md:w-1/2 bg-gray-100 p-6 flex flex-col justify-center">
-                    <h2 className="text-3xl font-bold mb-4 text-center md:text-left">DABALI XPRESS TRAITEUR</h2>
-                    <p className="text-lg text-gray-700 mb-4">
-                        Reception Anniversaire Baptême  Mariage  Séminaire  After-work
-                    </p>
-                    <p className="text-lg text-gray-700">
-                        Contactez-nous au <span className="font-bold">2522018760</span>
-                    </p>
                 </div>
             </section>
       </main>
