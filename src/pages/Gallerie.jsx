@@ -25,7 +25,7 @@ function Gallerie() {
         <>
             <main className="bg-gray-100 p-10 mt-20">
                 <HeaderPages />
-                <h2 className="text-3xl font-bold text-center mb-8">Galerie</h2>
+               
                 <div className="flex justify-start items-center">
                     <div className="relative w-2/3 h-96 flex justify-center items-center">
                         {images.map((image, index) => {

@@ -1,14 +1,17 @@
-// src/components/Header.jsx
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 import logo from "/logo.png";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (e, path) => {
+    if (location.pathname === path) {
+      document.querySelector(".main-content").scrollTop = 0;
+    }
     setIsOpen(false);
   };
 
@@ -35,13 +38,13 @@ function Header() {
       }`}
     >
       <div className="flex justify-between items-center p-4 md:p-6">
-      <Link to="/">
-        <img
-          src={logo}
-          alt="Bekono Sophie Logo"
-          className={`h-10 cursor-pointer transition-colors duration-300 ${scrolled ? 'text-vert' : 'text-white'}`}
-        />
-      </Link>
+        <Link to="/" onClick={(e) => handleLinkClick(e, "/")}>
+          <img
+            src={logo}
+            alt="Bekono Sophie Logo"
+            className={`h-10 cursor-pointer transition-colors duration-300 ${scrolled ? 'text-vert' : 'text-white'}`}
+          />
+        </Link>
 
         <nav className="hidden md:flex font-custom">
           <ul className="flex items-center gap-8">
@@ -50,7 +53,7 @@ function Header() {
                 scrolled ? "text-vert" : "text-white"
               }`}
             >
-              <Link to="/" onClick={handleLinkClick}
+              <Link to="/" onClick={(e) => handleLinkClick(e, "/")}
                 className={`${!scrolled ? "link-hover-underline" : ""}`}
               >
                 Home
@@ -61,7 +64,7 @@ function Header() {
                 scrolled ? "text-vert" : "text-white"
               }`}
             >
-              <Link to="/about" onClick={handleLinkClick}
+              <Link to="/about" onClick={(e) => handleLinkClick(e, "/about")}
                 className={`${!scrolled ? "link-hover-underline" : ""}`}
               >
                 About me
@@ -74,7 +77,7 @@ function Header() {
             >
               <Link
                 to="/traiteur"
-                onClick={handleLinkClick}
+                onClick={(e) => handleLinkClick(e, "/traiteur")}
                 className={`${!scrolled ? "link-hover-underline" : ""}`}
               >
                 Dabali traiteur
@@ -87,7 +90,7 @@ function Header() {
               }`}
             >
               <Link to="/menu" 
-              onClick={handleLinkClick}
+              onClick={(e) => handleLinkClick(e, "/menu")}
               className={`${!scrolled ? "link-hover-underline" : ""}`}
             >
               
@@ -100,29 +103,19 @@ function Header() {
                 scrolled ? "text-vert" : "text-white"
               }`}
             >
-              <Link to="/franchise"onClick={handleLinkClick}
+              <Link to="/franchise" onClick={(e) => handleLinkClick(e, "/franchise")}
                 className={`${!scrolled ? "link-hover-underline" : ""}`}
               >
                 Franchise
               </Link>
             </li>
+           
             <li
               className={`p-2 px-4 rounded-lg hover:bg-gray-800 transition-colors duration-300 ${
                 scrolled ? "text-vert" : "text-white"
               }`}
             >
-              <Link to="/gallerie"onClick={handleLinkClick}
-                className={`${!scrolled ? "link-hover-underline" : ""}`}
-              >
-                Gallerie
-              </Link>
-            </li>
-            <li
-              className={`p-2 px-4 rounded-lg hover:bg-gray-800 transition-colors duration-300 ${
-                scrolled ? "text-vert" : "text-white"
-              }`}
-            >
-              <Link to="/contact" onClick={handleLinkClick}
+              <Link to="/contact" onClick={(e) => handleLinkClick(e, "/contact")}
                 className={`${!scrolled ? "link-hover-underline" : ""}`}
               >
                 Contact
@@ -154,49 +147,49 @@ function Header() {
           <Link
             to="/"
             className="w-full py-2 hover:bg-gray-800"
-            onClick={handleLinkClick}
+            onClick={(e) => handleLinkClick(e, "/")}
           >
             Home
           </Link>
           <Link
             to="/about"
             className="w-full py-2 hover:bg-gray-800"
-            onClick={handleLinkClick}
+            onClick={(e) => handleLinkClick(e, "/about")}
           >
             About me
           </Link>
           <Link
             to="/traiteur"
             className="w-full py-2 hover:bg-gray-800"
-            onClick={handleLinkClick}
+            onClick={(e) => handleLinkClick(e, "/traiteur")}
           >
             Dabali traiteur
           </Link>
           <Link
             to="/menu"
             className="w-full py-2 hover:bg-gray-800"
-            onClick={handleLinkClick}
+            onClick={(e) => handleLinkClick(e, "/menu")}
           >
             Menu
           </Link>
           <Link
             to="/franchise"
             className="w-full py-2 hover:bg-gray-800"
-            onClick={handleLinkClick}
+            onClick={(e) => handleLinkClick(e, "/franchise")}
           >
             Franchise
           </Link>
           <Link
             to="/gallerie"
             className="w-full py-2 hover:bg-gray-800"
-            onClick={handleLinkClick}
+            onClick={(e) => handleLinkClick(e, "/gallerie")}
           >
             Gallerie
           </Link>
           <Link
             to="/contact"
             className="w-full py-2 hover:bg-gray-800"
-            onClick={handleLinkClick}
+            onClick={(e) => handleLinkClick(e, "/contact")}
           >
             Contact
           </Link>

@@ -1,11 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Banner from '../components/Banner';
 import FooterMenu from '../components/FooterMenu';
-import Card from '../components/Card'; // Adjust the import path if needed
-import Footer from '../components/Footer'; // Adjust the import path if needed
-import Comments from '../components/Comments'; // Adjust the import path if needed
-import Header from '../components/Header'; // Adjust the import path if needed
-import { Link } from 'react-router-dom';
+import Card from '../components/Card';
+import Footer from '../components/Footer';
+import Comments from '../components/Comments';
+import Header from '../components/Header';
 
 function Home() {
   const cards = [
@@ -13,19 +13,22 @@ function Home() {
       imageUrl: 'PROMO-COUPONS-.png',
       headerText: 'Promotion Coupons',
       cardText: 'Discover amazing discounts with our exclusive promo coupons.',
-      buttonText: 'Get Coupons'
+      linkUrl: '/menu',
+      linkText: 'Get Coupons'
     },
     {
       imageUrl: 'PROMOTION-1.png',
       headerText: 'Special Promotion',
       cardText: 'Check out our special promotion on a wide range of products.',
-      buttonText: 'Shop Now'
+      linkUrl: '/menu',
+      linkText: 'Shop Now'
     },
     {
       imageUrl: 'menu.png',
       headerText: 'Our Menu',
       cardText: 'Explore our delicious menu filled with a variety of dishes.',
-      buttonText: 'View Menu'
+      linkUrl: '/menu',
+      linkText: 'View Menu'
     }
   ];
 
@@ -64,7 +67,8 @@ function Home() {
               imageUrl={card.imageUrl}
               headerText={card.headerText}
               cardText={card.cardText}
-              buttonText={card.buttonText}
+              linkUrl={card.linkUrl}
+              linkText={card.linkText}
             />
           ))}
         </section>
@@ -86,21 +90,18 @@ function Home() {
         <section className='flex mt-4'>
           <Comments />
         </section>
-        <section className="bg-white p-8 rounded-lg shadow-md mb-8 flex">
+        <section className="bg-white p-8 rounded-lg shadow-md mb-8 mt-8 flex">
           <img src="path_to_image" alt="Franchise Dabali Xpress" className="w-1/2 h-auto object-cover rounded-lg mr-4"/>
           <div className="flex flex-col justify-center">
-            <h2 className="text-3xl font-bold mb-4">Pourquoi devenir franchisé Dabali Xpress</h2>
-            <p className="text-lg text-gray-700 mb-6">
-              <strong>Devenir franchise DABALI XPRESS c’est être la vitrine moderne du tourisme culinaire ivoirien et un acteur engagé dans le développement local.</strong>
+            <h2 className="text-3xl font-bold mb-4">Découvrez nos moments inoubliables</h2>
+            <p className="text-lg text-gray-700">
+              Plongez dans notre galerie pour découvrir en images l'essence et la passion qui animent Dabali Xpress. Cliquez sur le lien ci-dessous pour explorer notre galerie et vous inspirer de notre vision unique du tourisme culinaire ivoirien.
             </p>
-            <div className="flex justify-between">
-              <button className="bg-red-500 text-white px-4 py-2 rounded-md">Nous contacter</button>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">Télécharger la brochure ici</button>
-            </div>
+            <a href="/gallerie" className="text-blue-500 hover:underline mt-4">Visitez notre galerie ici</a>
           </div>
         </section>
       </main>
-      <footer className="relative z-10">
+      <footer className="relative z-10 mb-20">
         <Footer />
       </footer>
       <div className="relative z-10">
