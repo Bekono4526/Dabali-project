@@ -3,13 +3,13 @@ import HeaderPages from '../components/HeaderPages';
 
 function Contact() {
     return (
-        <main className="bg-gray-100 p-10 mt-20">
+        <main className="bg-gray-100 p-4 md:p-10 mt-20">
             <HeaderPages />
             
             {/* Formulaire de contact */}
-            <section className="bg-white p-8 rounded-lg shadow-md mb-8">
-                <h2 className="text-3xl font-bold mb-4">Contactez-nous</h2>
-                <p className="text-lg text-gray-700 mb-6">
+            <section className="bg-white p-4 md:p-8 rounded-lg shadow-md mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">Contactez-nous</h2>
+                <p className="text-base md:text-lg text-gray-700 mb-6">
                     Nous serions ravis de vous entendre. Remplissez le formulaire ci-dessous ou utilisez les informations de contact fournies pour nous joindre.
                 </p>
                 
@@ -64,13 +64,13 @@ function Contact() {
                     {/* Informations de contact */}
                     <div>
                         <h3 className="text-2xl font-semibold mb-4">Nos informations de contact</h3>
-                        <p className="text-lg text-gray-700 mb-2">
+                        <p className="text-base md:text-lg text-gray-700 mb-2">
                             <strong>Adresse :</strong> 123 Rue Exemple, Abidjan, Côte d'Ivoire
                         </p>
-                        <p className="text-lg text-gray-700 mb-2">
+                        <p className="text-base md:text-lg text-gray-700 mb-2">
                             <strong>Téléphone :</strong> +225 01 23 45 67 89
                         </p>
-                        <p className="text-lg text-gray-700 mb-4">
+                        <p className="text-base md:text-lg text-gray-700 mb-4">
                             <strong>Email :</strong> contact@dabalixpress.ci
                         </p>
                         

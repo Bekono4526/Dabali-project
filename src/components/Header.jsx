@@ -157,9 +157,9 @@ function Header() {
         className={`absolute inset-0 bg-dark-purple z-40 transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } md:hidden`}
-        style={{ width: "80%", backgroundColor: "rgba(45, 45, 45, 0.9)" }}
+        style={{ width: "80%" }}
       >
-        <div className="flex flex-col items-start p-4 space-y-4 text-white font-custom bg-dark-purple">
+        <div className="flex flex-col items-start p-4 space-y-4 text-white font-custom h-full bg-dark-purple">
           <h1 className="text-2xl font-bold text-white mb-6 cursor-pointer">
             Bekono Sophie
           </h1>

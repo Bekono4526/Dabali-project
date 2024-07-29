@@ -128,25 +128,25 @@ function Menu() {
   };
 
   return (
-    <main className="bg-gray-100 h-screen  mt-10">
+    <main className="bg-gray-100 mt-10">
       <HeaderPages />
       {/* Section Vidéo YouTube */}
-      <div className="pt-20 px-10">
-        <section className="bg-white p-8 rounded-lg shadow-md mb-8 flex">
+      <div className="pt-20 px-4 md:px-10">
+        <section className="bg-white p-4 md:p-8 rounded-lg shadow-md mb-8 flex flex-col md:flex-row">
           <video
             src="dabali.mp4"
             alt="Franchise Dabali Xpress"
-            className="w-1/3 h-auto rounded-lg mr-4"
+            className="w-full md:w-1/3 h-auto rounded-lg mb-4 md:mb-0 md:mr-4"
             style={{ objectFit: "contain", objectPosition: "center" }}
             controls
           >
             Votre navigateur ne supporte pas les vidéos HTML5.
           </video>
-          <div className="flex flex-col justify-center w-2/3">
-            <h2 className="text-3xl font-bold mb-4">
+          <div className="flex flex-col justify-center w-full md:w-2/3">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
               Menu du Jour chez Dabali Xpress
             </h2>
-            <p className="text-lg text-gray-700 mb-6">
+            <p className="text-base md:text-lg text-gray-700 mb-6">
               <strong>
                 Découvrez notre délicieux menu du jour, soigneusement préparé
                 avec des ingrédients frais et locaux pour une expérience
@@ -165,10 +165,10 @@ function Menu() {
           </div>
         </section>
 
-        <div className="flex h-full">
+        <div className="flex flex-col md:flex-row h-full">
           {/* Partie gauche : Liste des restaurants */}
-          <div className="w-1/2 bg-white p-8 rounded-lg shadow-md overflow-y-auto">
-            <h2 className="text-3xl font-bold mb-4">Nos Restaurants</h2>
+          <div className="w-full md:w-1/2 bg-white p-4 md:p-8 rounded-lg shadow-md overflow-y-auto mb-4 md:mb-0">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Nos Restaurants</h2>
             <ul>
               {locations.map((location, index) => (
                 <li
@@ -176,15 +176,15 @@ function Menu() {
                   className="mb-4 p-4 border rounded-md cursor-pointer hover:bg-gray-200"
                   onClick={() => setSelectedLocation(location)}
                 >
-                  <h3 className="text-2xl font-semibold">{location.name}</h3>
-                  <p className="text-lg text-gray-700">{location.address}</p>
+                  <h3 className="text-xl md:text-2xl font-semibold">{location.name}</h3>
+                  <p className="text-base md:text-lg text-gray-700">{location.address}</p>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Partie droite : Carte et lien vers le menu */}
-          <div className="w-1/2 bg-white p-8 rounded-lg shadow-md flex flex-col items-center justify-center">
+          <div className="w-full md:w-1/2 bg-white p-4 md:p-8 rounded-lg shadow-md flex flex-col items-center justify-center">
             {selectedLocation ? (
               <>
                 <iframe
@@ -205,7 +205,7 @@ function Menu() {
                 </button>
               </>
             ) : (
-              <p className="text-lg text-gray-700">
+              <p className="text-base md:text-lg text-gray-700 text-center">
                 Sélectionnez un restaurant pour voir la carte et le menu.
               </p>
             )}
@@ -227,7 +227,7 @@ function Menu() {
       {/* Pop-up pour le menu */}
       {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-8 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3 max-h-screen overflow-y-auto">
+          <div className="bg-white p-4 md:p-8 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3 max-h-screen overflow-y-auto">
             <div className="flex justify-between mb-4">
               <button
                 onClick={handleClosePopup}
@@ -241,10 +241,10 @@ function Menu() {
                 <span className="text-xl">{cart.length} articles</span>
               </div>
             </div>
-            <h2 className="text-3xl font-bold mb-4">Menu</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Menu</h2>
             {menuItems.map((category, index) => (
               <div key={index} className="mb-6">
-                <h3 className="text-2xl font-semibold mb-2">
+                <h3 className="text-xl md:text-2xl font-semibold mb-2">
                   {category.category}
                 </h3>
                 <div className="relative">
@@ -307,9 +307,9 @@ function Menu() {
       {/* Pop-up pour le panier */}
       {showCart && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3 max-h-screen overflow-y-auto">
+          <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3 max-h-screen overflow-y-auto">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-3xl font-bold">Votre Panier</h2>
+              <h2 className="text-2xl md:text-3xl font-bold">Votre Panier</h2>
               <button
                 onClick={handleCartClick}
                 className="bg-red-500 text-white px-4 py-2 rounded-md flex items-center"

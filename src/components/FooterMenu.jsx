@@ -1,93 +1,114 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import Banner from '../components/Banner';
+import FooterMenu from '../components/FooterMenu';
+import Card from '../components/Card';
+import Footer from '../components/Footer';
+import Comments from '../components/Comments';
+import Header from '../components/Header';
 
-function FooterMenu() {
-    const [showPopup, setShowPopup] = useState(false);
-    const [restaurant, setRestaurant] = useState('');
-    const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
-    const [date, setDate] = useState('');
-    const [time, setTime] = useState('');
-    const [people, setPeople] = useState('');
+function Home() {
+  const cards = [
+    {
+      imageUrl: 'PROMO-COUPONS-.png',
+      headerText: 'Promotion Coupons',
+      cardText: 'Discover amazing discounts with our exclusive promo coupons.',
+      linkUrl: '/menu',
+      linkText: 'Get Coupons'
+    },
+    {
+      imageUrl: 'PROMOTION-1.png',
+      headerText: 'Special Promotion',
+      cardText: 'Check out our special promotion on a wide range of products.',
+      linkUrl: '/menu',
+      linkText: 'Shop Now'
+    },
+    {
+      imageUrl: 'menu.png',
+      headerText: 'Our Menu',
+      cardText: 'Explore our delicious menu filled with a variety of dishes.',
+      linkUrl: '/menu',
+      linkText: 'View Menu'
+    }
+  ];
 
-    const togglePopup = () => {
-        setShowPopup(!showPopup);
-    };
+  const articles = [
+    {
+      id: 1,
+      title: 'Article 1',
+      content: 'This is a brief summary of the first article.',
+      imageUrl: 'dabali1.jpg',
+    },
+    {
+      id: 2,
+      title: 'Article 2',
+      content: 'This is a brief summary of the second article.',
+      imageUrl: 'dabali2.jpg',
+    },
+    {
+      id: 3,
+      title: 'Article 3',
+      content: 'This is a brief summary of the third article.',
+      imageUrl: 'dabali4.jpg',
+    },
+  ];
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Logique de soumission du formulaire
-        console.log({
-            restaurant,
-            name,
-            phone,
-            date,
-            time,
-            people
-        });
-        togglePopup(); // Fermer le pop-up après soumission
-    };
-
-    return (
-        <footer className='footer-menu-container fixed bottom-0 left-0 right-0 bg-dark-purple text-white p-4 z-50 flex justify-between items-center'>
-            <div className="flex items-center gap-6">
-                <Link to="/menu" className='hover:text-gray-300 transition-colors duration-300'>Menu</Link>
-                <Link to="/traiteur" className='hover:text-gray-300 transition-colors duration-300'>Dabali Traiteur</Link>
-                <button onClick={togglePopup} className='hover:text-gray-300 transition-colors duration-300'>
-                    Réserver
-                </button>
-            </div>
-            <div className="flex items-center gap-4">
-                <p>Abidjan, Côte d'Ivoire</p>
-                <p>+225 01 23 45 67 89</p>
-                <p>contact@dabalixpress.ci</p>
-            </div>
-            {showPopup && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                    <div className="bg-dark-purple p-6 rounded-lg shadow-lg relative w-96 mt-20">
-                        <button onClick={togglePopup} className="absolute top-2 right-2 text-xl">&times;</button>
-                        <h2 className="text-xl mb-4">Réserver une table</h2>
-                        <form onSubmit={handleSubmit}>
-                            <div className="mb-3">
-                                <label className="block mb-1 text-sm">Choisissez un restaurant:</label>
-                                <select value={restaurant} onChange={(e) => setRestaurant(e.target.value)} className="w-full p-1 border rounded text-smn text-dark-purple">
-                                    <option value="">Sélectionner</option>
-                                    <option value="restaurant1">Restaurant 1</option>
-                                    <option value="restaurant2">Restaurant 2</option>
-                                    <option value="restaurant3">Restaurant 3</option>
-                                    <option value="restaurant4">Restaurant 4</option>
-                                </select>
-                            </div>
-                            <div className="mb-3">
-                                <label className="block mb-1 text-sm">Nom:</label>
-                                <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="w-full p-1 border rounded text-sm text-dark-purple" />
-                            </div>
-                            <div className="mb-3">
-                                <label className="block mb-1 text-sm">Téléphone:</label>
-                                <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} className="w-full p-1 border rounded text-sm text-dark-purple" />
-                            </div>
-                            <div className="mb-3">
-                                <label className="block mb-1 text-sm ">Date:</label>
-                                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="w-full p-1 border rounded text-sm text-dark-purple" />
-                            </div>
-                            <div className="mb-3">
-                                <label className="block mb-1 text-sm">Heure:</label>
-                                <input type="time" value={time} onChange={(e) => setTime(e.target.value)} className="w-full p-1 border rounded text-sm text-dark-purple" />
-                            </div>
-                            <div className="mb-3">
-                                <label className="block mb-1 text-sm">Nombre de personnes:</label>
-                                <input type="number" value={people} onChange={(e) => setPeople(e.target.value)} className="w-full p-1 border rounded text-sm text-dark-purple" />
-                            </div>
-                            <div className="flex justify-between">
-                                <button type="button" onClick={togglePopup} className="bg-red-500 text-white p-1 rounded hover:bg-red-700 transition-colors duration-300 text-sm">Cancel</button>
-                                <button type="submit" className="bg-blue-500 text-white p-1 rounded hover:bg-blue-700 transition-colors duration-300 text-sm">Réserver</button>
-                            </div>
-                        </form>
-                    </div>
+  return (
+    <div className='relative flex flex-col min-h-screen overflow-y-auto'>
+      <Header className="header-container" /> {/* Ajout du Header ici */}
+      <header className="relative z-10">
+        <Banner />
+      </header>
+      <main className='flex-grow relative z-10'>
+        <section className="flex flex-col items-center justify-center gap-6 p-6 md:p-8 mt-10 md:flex-row">
+          {cards.map((card, index) => (
+            <Card
+              key={index}
+              imageUrl={card.imageUrl}
+              headerText={card.headerText}
+              cardText={card.cardText}
+              linkUrl={card.linkUrl}
+              linkText={card.linkText}
+            />
+          ))}
+        </section>
+        <section className="content-container p-6 md:p-8">
+          <h2 className="text-xl font-bold mb-4">Latest Articles</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {articles.map((article, index) => (
+              <div key={index} className="p-4 border rounded-lg shadow-lg bg-white">
+                <img src={article.imageUrl} alt={article.title} className="w-full h-48 object-cover rounded-t-lg" />
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold mb-2">{article.title}</h3>
+                  <p>{article.content}</p>
+                  <Link to={`/article/${article.id}`} className="text-blue-500 hover:underline">Read More</Link>
                 </div>
-            )}
-        </footer>
-    );
+              </div>
+            ))}
+          </div>
+        </section>
+        <section className='p-6 md:p-8'>
+          <Comments />
+        </section>
+        <section className="bg-white p-6 md:p-8 rounded-lg shadow-md mb-8 mt-8 flex flex-col md:flex-row">
+          <img src="path_to_image" alt="Franchise Dabali Xpress" className="w-full md:w-1/2 h-auto object-cover rounded-lg mb-4 md:mb-0 md:mr-4"/>
+          <div className="flex flex-col justify-center">
+            <h2 className="text-3xl font-bold mb-4">Découvrez nos moments inoubliables</h2>
+            <p className="text-lg text-gray-700">
+              Plongez dans notre galerie pour découvrir en images l'essence et la passion qui animent Dabali Xpress. Cliquez sur le lien ci-dessous pour explorer notre galerie et vous inspirer de notre vision unique du tourisme culinaire ivoirien.
+            </p>
+            <a href="/gallerie" className="text-blue-500 hover:underline mt-4">Visitez notre galerie ici</a>
+          </div>
+        </section>
+      </main>
+      <footer className="relative z-10">
+        <Footer />
+      </footer>
+      <div className="relative z-10">
+        <FooterMenu />
+      </div>
+    </div>
+  );
 }
 
-export default FooterMenu;
+export default Home;

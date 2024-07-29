@@ -40,47 +40,47 @@ function Franchise() {
             image: "schema.jpg",
             alt: "Rejoindre DABALI XPRESS",
             buttons: true,
-            className: "md:w-1/3 w-full h-auto object-contain rounded-lg mb-4 md:mb-0 md:mr-8" // Utilisation de object-contain
+            className: "md:w-1/3 w-full h-auto object-contain rounded-lg mb-4 md:mb-0 md:mr-8"
         }
     ];
 
     return (
-        <main className="bg-gray-100 p-10 mt-20">
+        <main className="bg-gray-100 p-4 md:p-10 mt-20">
             <HeaderPages />
             {sections.map((section, index) => (
-                <section key={index} className={`bg-white p-8 rounded-lg shadow-md mb-8 flex flex-col md:flex-row ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+                <section key={index} className={`bg-white p-4 md:p-8 rounded-lg shadow-md mb-8 flex flex-col md:flex-row ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                     {section.image && (
                         <img src={section.image} alt={section.alt} className={section.className}/>
                     )}
                     {section.images && section.images.length > 0 && (
-                        <div className="relative w-full h-64 mb-4 md:mb-0">
-                            <img src={section.images[0]} alt={section.alt[0]} className="absolute top-0 left-0 w-32 h-32 object-contain rounded-lg"/>
-                            <img src={section.images[1]} alt={section.alt[1]} className="absolute bottom-0 right-0 w-32 h-32 object-contain rounded-lg"/>
-                            <div className="flex flex-col justify-center h-full ml-36 mr-36">
-                                <h2 className="text-3xl font-bold mb-4">{section.title}</h2>
-                                <p className="text-lg text-gray-700" dangerouslySetInnerHTML={{ __html: section.text }}></p>
+                        <div className="relative w-full md:w-2/3 flex flex-col justify-center">
+                            <h2 className="text-2xl md:text-3xl font-bold mb-4">{section.title}</h2>
+                            <p className="text-base md:text-lg text-gray-700" dangerouslySetInnerHTML={{ __html: section.text }}></p>
+                            <div className="flex flex-wrap justify-between">
+                                <img src={section.images[0]} alt={section.alt[0]} className="w-1/2 md:w-1/3 h-auto object-contain rounded-lg mb-4"/>
+                                <img src={section.images[1]} alt={section.alt[1]} className="w-1/2 md:w-1/3 h-auto object-contain rounded-lg"/>
                             </div>
                         </div>
                     )}
                     {!section.images && !section.image && (
                         <div className="flex flex-col justify-center w-full">
-                            <h2 className="text-3xl font-bold mb-4">{section.title}</h2>
-                            <p className="text-lg text-gray-700" dangerouslySetInnerHTML={{ __html: section.text }}></p>
+                            <h2 className="text-2xl md:text-3xl font-bold mb-4">{section.title}</h2>
+                            <p className="text-base md:text-lg text-gray-700" dangerouslySetInnerHTML={{ __html: section.text }}></p>
                             {section.buttons && (
-                                <div className="flex justify-between mt-6">
-                                    <button className="bg-red-500 text-white px-4 py-2 rounded-md">Nous contacter</button>
+                                <div className="flex flex-col md:flex-row justify-between mt-6">
+                                    <button className="bg-red-500 text-white px-4 py-2 rounded-md mb-4 md:mb-0">Nous contacter</button>
                                     <button className="bg-blue-500 text-white px-4 py-2 rounded-md">Télécharger la brochure ici</button>
                                 </div>
                             )}
                         </div>
                     )}
                     {!section.images && section.image && (
-                        <div className="flex flex-col justify-center md:w-2/3">
-                            <h2 className="text-3xl font-bold mb-4">{section.title}</h2>
-                            <p className="text-lg text-gray-700" dangerouslySetInnerHTML={{ __html: section.text }}></p>
+                        <div className="flex flex-col justify-center w-full md:w-2/3">
+                            <h2 className="text-2xl md:text-3xl font-bold mb-4">{section.title}</h2>
+                            <p className="text-base md:text-lg text-gray-700" dangerouslySetInnerHTML={{ __html: section.text }}></p>
                             {section.buttons && (
-                                <div className="flex justify-between mt-6">
-                                    <button className="bg-red-500 text-white px-4 py-2 rounded-md">Nous contacter</button>
+                                <div className="flex flex-col md:flex-row justify-between mt-6">
+                                    <button className="bg-red-500 text-white px-4 py-2 rounded-md mb-4 md:mb-0">Nous contacter</button>
                                     <button className="bg-blue-500 text-white px-4 py-2 rounded-md">Télécharger la brochure ici</button>
                                 </div>
                             )}
@@ -89,12 +89,12 @@ function Franchise() {
                 </section>
             ))}
 
-            <section className="bg-white p-8 rounded-lg shadow-md">
-                <h2 className="text-3xl font-bold mb-4">Articles récents</h2>
+            <section className="bg-white p-4 md:p-8 rounded-lg shadow-md">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">Articles récents</h2>
                 <ul className="list-disc list-inside">
-                    <li className="text-lg text-gray-700 mb-2"><strong>Dabali Xpress souffle ses deux bougies en célébrant ses employés et partenaires</strong></li>
-                    <li className="text-lg text-gray-700 mb-2"><strong>Dabali Xpress décroche le Prix d’Excellence du meilleur établissement de restauration</strong></li>
-                    <li className="text-lg text-gray-700"><strong>Prix du meilleur accueil dans la catégorie Restauration rapide</strong></li>
+                    <li className="text-base md:text-lg text-gray-700 mb-2"><strong>Dabali Xpress souffle ses deux bougies en célébrant ses employés et partenaires</strong></li>
+                    <li className="text-base md:text-lg text-gray-700 mb-2"><strong>Dabali Xpress décroche le Prix d’Excellence du meilleur établissement de restauration</strong></li>
+                    <li className="text-base md:text-lg text-gray-700"><strong>Prix du meilleur accueil dans la catégorie Restauration rapide</strong></li>
                 </ul>
             </section>
         </main>
