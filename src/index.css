@@ -161,6 +161,15 @@ img, video {
   transition: transform 0.5s ease-out, opacity 0.5s ease-out;
   opacity: 1;
 }
+@layer components {
+  .card-enter {
+    @apply transform translate-x-full opacity-0;
+  }
+  .card-enter-active {
+    @apply transform translate-x-0 opacity-100;
+    transition: transform 500ms ease-out, opacity 500ms ease-out;
+  }
+}
 
   /* code pour articles*/
   .article-content p {

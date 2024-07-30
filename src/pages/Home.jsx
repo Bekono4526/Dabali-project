@@ -60,7 +60,7 @@ function Home() {
         <Banner />
       </header>
       <main className='flex-grow relative z-10'>
-        <section className="flex justify-center gap-6 p-6 md:p-8 mt-10">
+        <section className="flex flex-col md:flex-row justify-center gap-6 p-6 md:p-8 mt-10">
           {cards.map((card, index) => (
             <Card
               key={index}
