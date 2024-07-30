@@ -143,7 +143,7 @@ function Header() {
 
         <button
           className={`text-2xl md:hidden ${
-            scrolled ? "text-vert" : "text-white"
+            scrolled ? "text-yellow-400" : "text-white"
           }`}
           onClick={() => setIsOpen(!isOpen)}
         >
