@@ -47,7 +47,7 @@ function FooterMenu() {
       
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-dark-purple p-6 rounded-lg shadow-lg relative w-96 mt-20">
+          <div className="bg-white p-6 rounded-lg shadow-lg relative w-96 mt-20">
             <button onClick={togglePopup} className="absolute top-2 right-2 text-xl">&times;</button>
             <h2 className="text-xl mb-4">Réserver une table</h2>
             <form onSubmit={handleSubmit}>
