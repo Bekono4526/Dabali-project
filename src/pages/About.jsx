@@ -7,7 +7,7 @@ import HeaderPages from '../components/HeaderPages';
 function About() {
     const [showFullText, setShowFullText] = useState(false);
     const [hoveredCard, setHoveredCard] = useState(null);
-    const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+    const isCustomMd = useMediaQuery({ query: '(max-width: 770px)' });
 
     const toggleText = () => {
         setShowFullText(!showFullText);
@@ -32,14 +32,14 @@ function About() {
         <main className="bg-gray-100 mt-20">
             <HeaderPages />
             {/* Section 1: Image and Company History */}
-            <section className="flex flex-col md:flex-row items-center justify-between p-6 md:p-10 bg-white shadow-md">
-                <div className="w-full md:w-1/2 mb-4 md:mb-0">
+            <section className="flex flex-col custom-md:flex-row items-center justify-between p-6 md:p-10 bg-white shadow-md">
+                <div className="w-full custom-md:w-1/2 mb-4 custom-md:mb-0">
                     <img src="dabali5.jpg" alt="Company History" className="w-full h-auto rounded-md" />
                 </div>
-                <div className="w-full md:w-1/2 mt-4 md:mt-0 md:ml-10">
+                <div className="w-full custom-md:w-1/2 mt-4 custom-md:mt-0 custom-md:ml-10">
                     <h2 className="text-2xl md:text-3xl font-bold mb-4">Notre Histoire</h2>
                     <p className="text-base md:text-lg text-gray-700">
-                        {isMobile ? (
+                        {isCustomMd ? (
                             showFullText ? (
                                 <>
                                     Lancé en septembre 2021, Dabali Xpress est une entreprise 100% ivoirienne. Elle est née de la volonté de sa créatrice de valoriser les plats Africains et ivoiriens en particulier dans un secteur de la restauration rapide dominé essentiellement par des menus occidentaux. C'est la première chaîne de Fast food ivoirienne proposant exclusivement une grande variété de plats locaux faits dans des conditions sanitaires irréprochables alliant qualité de service et rapidité. Elle compte à ce jour plusieurs restaurants implantés dans différentes communes pour le plus grand plaisir de nos dabasseurs.
@@ -64,37 +64,37 @@ function About() {
                 </div>
             </section>
 
-            {/* Section 2: Company Values */}
-            <section className="p-6 md:p-10 bg-yellow-100">
-                <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Nos Valeurs</h2>
-                <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-4">
-                    {cards.map((card, index) => (
-                        <div
-                            key={index}
-                            className={`${card.color} ${hoveredCard !== null && hoveredCard !== index ? 'blur-sm' : 'hover:scale-110'} transform transition duration-400 ease-in-out text-white rounded-lg w-64 h-64 p-4 flex flex-col justify-start cursor-pointer`}
-                            onMouseEnter={() => handleMouseEnter(index)}
-                            onMouseLeave={handleMouseLeave}
-                        >
-                            <div className="flex items-center mb-2">
-                                <span className="text-2xl mr-2 text-center">{card.icon}</span>
-                                <p className="font-bold text-lg text-center ">{card.title}</p>
-                            </div>
-                            <p className="text-sm mt-4 text-center">{card.text}</p>
-                        </div>
-                    ))}
+           {/* Section 2: Company Values */}
+<section className="p-6 md:p-10 bg-yellow-100">
+    <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Nos Valeurs</h2>
+    <div className="flex flex-col md:flex-row md:flex-wrap justify-center items-center md:items-stretch gap-4">
+        {cards.map((card, index) => (
+            <div
+                key={index}
+                className={`${card.color} ${hoveredCard !== null && hoveredCard !== index ? 'blur-sm' : 'hover:scale-110'} transform transition duration-400 ease-in-out text-white rounded-lg w-64 h-64 p-4 flex flex-col justify-start cursor-pointer`}
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
+            >
+                <div className="flex flex-col items-center mb-2">
+                    <span className="text-2xl mb-2">{card.icon}</span>
+                    <p className="font-bold text-lg text-center">{card.title}</p>
                 </div>
-            </section>
+                <p className="text-sm mt-4 text-center">{card.text}</p>
+            </div>
+        ))}
+    </div>
+</section>
 
             {/* Section 3: Founders and Team Images */}
             <section className="p-6 md:p-10 bg-white">
                 <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Rencontrez Nos Fondateurs et Équipe</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                     <div className="flex flex-col items-center">
-                        <img src="fondatrice.jpg" alt="Fondateur 1" className="w-50 h-50  mb-4" />
+                        <img src="fondatrice.jpg" alt="Fondateur 1" className="w-50 h-50 mb-4" />
                         <h3 className="text-lg md:text-xl font-semibold">Fondateur 1</h3>
                     </div>
                     <div className="flex flex-col items-center">
-                        <img src="DGA.jpg" alt="Fondateur 2" className="w-50 h-50  mb-4 " />
+                        <img src="DGA.jpg" alt="Fondateur 2" className="w-50 h-50 mb-4 " />
                         <h3 className="text-lg md:text-xl font-semibold">Fondateur 2</h3>
                     </div>
                 </div>

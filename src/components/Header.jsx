@@ -48,7 +48,7 @@ function Header() {
           />
         </Link>
 
-        <nav className="hidden md:flex font-custom">
+        <nav className="hidden custom-md:flex font-custom">
           <ul className="flex items-center gap-8">
             <li
               className={`p-2 px-4 rounded-lg transition-colors duration-300 ${
@@ -144,7 +144,7 @@ function Header() {
         </nav>
 
         <button
-          className={`text-2xl md:hidden ${
+          className={`text-2xl custom-md:hidden ${
             scrolled ? "text-yellow-400" : "text-white "
           }`}
           onClick={() => setIsOpen(!isOpen)}
@@ -156,7 +156,7 @@ function Header() {
       <div
         className={`absolute inset-0 bg-dark-purple z-40 transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } md:hidden`}
+        } custom-md:hidden`}
         style={{ width: "80%", height: "100vh" }}
       >
         <div className="flex flex-col items-start p-4 space-y-4 text-white font-custom h-full bg-dark-purple">

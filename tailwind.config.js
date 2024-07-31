@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'custom-md': '770px',
+      },
       colors: {
         "dark-purple": "#0e0b1d",
         "white": "#ffffff",

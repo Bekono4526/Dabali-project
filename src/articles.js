@@ -38,4 +38,17 @@ export const articles = [
         `,
         imageUrl: 'url-to-article-image3.jpg',
     },
+    {
+        id: 4,
+        title: 'Article 4',
+        content: `
+            This is the full content of the third article. It includes multiple paragraphs and images.
+            <p>Aliquam sit amet est nec nulla placerat fermentum. Integer sit amet dolor non ligula interdum tempor.</p>
+            <img src="url-to-article-image-detail1.jpg" alt="Detail Image 1" class="article-image" />
+            <p>Etiam id velit vel arcu sagittis luctus. Maecenas ultricies arcu eu libero viverra, a sollicitudin tortor eleifend.</p>
+            <img src="url-to-article-image-detail2.jpg" alt="Detail Image 2" class="article-image" />
+            <p>Donec eu urna sit amet elit gravida luctus a et mauris.</p>
+        `,
+        imageUrl: 'url-to-article-image3.jpg',
+    },
 ];

@@ -35,33 +35,36 @@ function FooterMenu() {
 
   return (
     <>
-      <footer className='footer-menu-container fixed bottom-0 left-0 right-0 bg-dark-purple text-white p-4 z-50'>
-        <div className="flex flex-col md:flex-row justify-between items-center w-full">
-          <div className="hidden md:flex flex-row items-center gap-2 md:gap-6">
+      <footer className='footer-menu-container fixed bottom-0 bg-yellow-400 text-white p-4 z-50'>
+        {/* Desktop View */}
+        <div className="hidden custom-md:flex flex-row justify-between items-center w-full">
+          <div className="flex flex-row items-center gap-2 md:gap-6">
             <Link to="/menu" className='hover:text-gray-300 transition-colors duration-300'>Menu</Link>
             <Link to="/traiteur" className='hover:text-gray-300 transition-colors duration-300'>Dabali Traiteur</Link>
             <button onClick={togglePopup} className='hover:text-gray-300 transition-colors duration-300'>
               Réserver
             </button>
           </div>
-          <div className="hidden md:flex flex-row items-center gap-2 mt-2 md:mt-0">
+          <div className="flex flex-row items-center gap-2 mt-2 md:mt-0">
             <p>Abidjan, Côte d'Ivoire</p>
             <p>+225 01 23 45 67 89</p>
             <p>contact@dabalixpress.ci</p>
           </div>
         </div>
-        <div className="flex flex-col md:hidden w-full">
-          <div className="flex items-center justify-center relative p-2">
-            <span className="absolute bottom-2 left-1/2 transform -translate-x-1/2">FIND US</span>
-            <button onClick={toggleAccordion} className="text-red-500 absolute bottom-2 right-4">
+        
+        {/* Mobile View */}
+        <div className="flex flex-col custom-md:hidden w-full items-center">
+          <div className="flex items-center justify-center w-full p-2 relative">
+            <span className="mx-auto text-yellow-400">FIND US</span>
+            <button onClick={toggleAccordion} className="text-red-500 absolute right-4 top-1/2 transform -translate-y-1/2">
               {accordionOpen ? <FaChevronUp /> : <FaChevronDown />}
             </button>
           </div>
           {accordionOpen && (
-            <div className="flex flex-col items-center gap-2 md:gap-6 mt-4">
-              <Link to="/menu" className='hover:text-gray-300 transition-colors duration-300'>Menu</Link>
-              <Link to="/traiteur" className='hover:text-gray-300 transition-colors duration-300'>Dabali Traiteur</Link>
-              <button onClick={togglePopup} className='hover:text-gray-300 transition-colors duration-300'>
+            <div className="flex flex-col items-center gap-2 mt-4 w-full">
+              <Link to="/menu" className='hover:text-gray-300 transition-colors duration-300 text-center w-full'>Menu</Link>
+              <Link to="/traiteur" className='hover:text-gray-300 transition-colors duration-300 text-center w-full'>Dabali Traiteur</Link>
+              <button onClick={togglePopup} className='hover:text-gray-300 transition-colors duration-300 text-center w-full'>
                 Réserver
               </button>
               <div className="accordion-content p-4 bg-light-gray text-black text-center w-full">
