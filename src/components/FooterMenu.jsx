@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaChevronUp, FaChevronDown, FaTimes } from 'react-icons/fa';
 
-function FooterMenu() { 
+function FooterMenu() {
   const [showPopup, setShowPopup] = useState(false);
   const [restaurant, setRestaurant] = useState('');
   const [name, setName] = useState('');
@@ -9,46 +10,76 @@ function FooterMenu() {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [people, setPeople] = useState('');
+  const [accordionOpen, setAccordionOpen] = useState(false);
 
   const togglePopup = () => {
-      setShowPopup(!showPopup);
+    setShowPopup(!showPopup);
   };
 
   const handleSubmit = (e) => {
-      e.preventDefault();
-      // Logique de soumission du formulaire
-      console.log({
-          restaurant,
-          name,
-          phone,
-          date,
-          time,
-          people
-      });
-      togglePopup(); // Fermer le pop-up après soumission
+    e.preventDefault();
+    console.log({
+      restaurant,
+      name,
+      phone,
+      date,
+      time,
+      people
+    });
+    togglePopup();
   };
 
-  return(
+  const toggleAccordion = () => {
+    setAccordionOpen(!accordionOpen);
+  };
+
+  return (
     <>
-      <footer className='footer-menu-container fixed bottom-0 left-0 right-0 bg-dark-purple text-white p-4 z-50 flex justify-between items-center'>
-        <div className="flex items-center gap-6">
-          <Link to="/menu" className='hover:text-gray-300 transition-colors duration-300'>Menu</Link>
-          <Link to="/traiteur" className='hover:text-gray-300 transition-colors duration-300'>Dabali Traiteur</Link>
-          <button onClick={togglePopup} className='hover:text-gray-300 transition-colors duration-300'>
-            Réserver
-          </button>
+      <footer className='footer-menu-container fixed bottom-0 left-0 right-0 bg-dark-purple text-white p-4 z-50'>
+        <div className="flex flex-col md:flex-row justify-between items-center w-full">
+          <div className="hidden md:flex flex-row items-center gap-2 md:gap-6">
+            <Link to="/menu" className='hover:text-gray-300 transition-colors duration-300'>Menu</Link>
+            <Link to="/traiteur" className='hover:text-gray-300 transition-colors duration-300'>Dabali Traiteur</Link>
+            <button onClick={togglePopup} className='hover:text-gray-300 transition-colors duration-300'>
+              Réserver
+            </button>
+          </div>
+          <div className="hidden md:flex flex-row items-center gap-2 mt-2 md:mt-0">
+            <p>Abidjan, Côte d'Ivoire</p>
+            <p>+225 01 23 45 67 89</p>
+            <p>contact@dabalixpress.ci</p>
+          </div>
         </div>
-        <div className="flex items-center gap-4"></div>
-        <p>Abidjan, Côte d'Ivoire</p>
-        <p>+225 01 23 45 67 89</p>
-        <p>contact@dabalixpress.ci</p>
+        <div className="flex flex-col md:hidden w-full">
+          <div className="flex items-center justify-center relative p-2">
+            <span className="absolute bottom-2 left-1/2 transform -translate-x-1/2">FIND US</span>
+            <button onClick={toggleAccordion} className="text-red-500 absolute bottom-2 right-4">
+              {accordionOpen ? <FaChevronUp /> : <FaChevronDown />}
+            </button>
+          </div>
+          {accordionOpen && (
+            <div className="flex flex-col items-center gap-2 md:gap-6 mt-4">
+              <Link to="/menu" className='hover:text-gray-300 transition-colors duration-300'>Menu</Link>
+              <Link to="/traiteur" className='hover:text-gray-300 transition-colors duration-300'>Dabali Traiteur</Link>
+              <button onClick={togglePopup} className='hover:text-gray-300 transition-colors duration-300'>
+                Réserver
+              </button>
+              <div className="accordion-content p-4 bg-light-gray text-black text-center w-full">
+                <p>Abidjan, Côte d'Ivoire</p>
+                <p>+225 01 23 45 67 89</p>
+                <p>contact@dabalixpress.ci</p>
+              </div>
+            </div>
+          )}
+        </div>
       </footer>
-  
-      
+
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg relative w-96 mt-20">
-            <button onClick={togglePopup} className="absolute top-2 right-2 text-xl">&times;</button>
+            <button onClick={togglePopup} className="absolute top-2 right-2 text-xl text-red-500">
+              <FaTimes />
+            </button>
             <h2 className="text-xl mb-4">Réserver une table</h2>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">

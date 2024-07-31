@@ -93,7 +93,7 @@ function Franchise() {
                 <h2 className="text-2xl md:text-3xl font-bold mb-4">Articles récents</h2>
                 <ul className="list-disc list-inside">
                     <li className="text-base md:text-lg text-gray-700 mb-2"><strong>Dabali Xpress souffle ses deux bougies en célébrant ses employés et partenaires</strong></li>
-                    <li className="text-base md:text-lg text-gray-700 mb-2"><strong>Dabali Xpress décroche le Prix d’Excellence du meilleur établissement de restauration</strong></li>
+                    <li className="text-base md:text-lg text-gray-700 mb-2"><strong>Dabali Xpress décroche le Prix d'Excellence du meilleur établissement de restauration</strong></li>
                     <li className="text-base md:text-lg text-gray-700"><strong>Prix du meilleur accueil dans la catégorie Restauration rapide</strong></li>
                 </ul>
             </section>
