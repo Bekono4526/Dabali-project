@@ -162,19 +162,7 @@ img, video {
   transition: transform 0.5s ease-out, opacity 0.5s ease-out;
   opacity: 1;
 }
-/*code slide des 3 cartes */
 
-@layer components {
-  .card-enter {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  .card-enter-active {
-    transform: translateX(0);
-    opacity: 100;
-    transition: transform 500ms ease-out, opacity 500ms ease-out;
-  }
-}
 
 
   /* code pour articles*/
