@@ -163,15 +163,19 @@ img, video {
   opacity: 1;
 }
 /*code slide des 3 cartes */
+
 @layer components {
   .card-enter {
-    @apply transform translate-x-full opacity-0;
+    transform: translateX(100%);
+    opacity: 0;
   }
   .card-enter-active {
-    @apply transform translate-x-0 opacity-100;
+    transform: translateX(0);
+    opacity: 100;
     transition: transform 500ms ease-out, opacity 500ms ease-out;
   }
 }
+
 
   /* code pour articles*/
   .article-content p {
@@ -288,7 +292,7 @@ img, video {
 }
 
 /*code pour barre de scroll vertical aticles*/
-/* CSS global */
+
 ::-webkit-scrollbar {
   width: 8px; /* Largeur de la barre de défilement verticale */
   height: 8px; /* Hauteur de la barre de défilement horizontale */

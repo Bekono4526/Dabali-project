@@ -51,7 +51,6 @@ function Home() {
       content: 'This is a brief summary of the third article.',
       imageUrl: 'dabali4.jpg',
     },
-    // Ajoutez plus d'articles ici si nécessaire
   ];
 
   return (

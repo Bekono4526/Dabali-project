@@ -14,7 +14,7 @@ const CommentCard = ({ imageUrl, userName, userId, comment, className }) => {
           <p className="Id text-gray-400 text-xs">@{userId}</p>
         </div>
       </div>
-      <div className="Description bg-gray-700 p-3 rounded-md text-white text-sm overflow-hidden text-ellipsis">
+      <div className="Description bg-gray-700 p-6 rounded-md text-white text-sm overflow-hidden text-ellipsis">
         {comment}
       </div>
     </div>
