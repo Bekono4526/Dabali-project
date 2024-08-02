@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useRef, useState } from "react";
 import { FiShoppingCart, FiX, FiCheckCircle } from "react-icons/fi";
 import HeaderPages from "../components/HeaderPages";
