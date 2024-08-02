@@ -59,7 +59,7 @@ To run this project locally, follow these steps:
     npm run dev
     ```
 
-The site will be accessible at [http://localhost:3000](http://localhost:3000).
+The site will be accessible at [https://dabali-project.netlify.app](https://dabali-project.netlify.app).
 
 ## Usage
 
