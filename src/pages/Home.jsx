@@ -98,7 +98,7 @@ function Home() {
             <p className="text-lg text-gray-700">
               Plongez dans notre galerie pour découvrir en images l'essence et la passion qui animent Dabali Xpress. Cliquez sur le lien ci-dessous pour explorer notre galerie et vous inspirer de notre vision unique du tourisme culinaire ivoirien.
             </p>
-            <a href="/gallerie" className="text-blue-500 hover:underline mt-4">Visitez notre galerie ici</a>
+            <Link to="/gallerie" className='hover:text-gray-300 transition-colors duration-300  mt-4'>Visitez notre galerie ici</Link>
           </div>
         </section>
       </main>
