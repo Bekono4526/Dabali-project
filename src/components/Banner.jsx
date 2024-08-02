@@ -41,7 +41,7 @@ function Banner() {
     }, [nextImageIndex, images.length]);
 
     return (
-        <section className='banner-container bg-dark-purple text-white p-6 md:p-8 flex flex-col items-center justify-center min-h-screen'>
+        <section className='banner-container rounded-lg text-white p-6 md:p-8 flex flex-col items-center justify-center min-h-screen'>
             <div 
                 className={`banner-image ${transition ? 'slide-out' : ''}`} 
                 style={{ backgroundImage: `url(${images[currentImageIndex].url})` }}

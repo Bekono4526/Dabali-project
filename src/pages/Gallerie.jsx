@@ -65,7 +65,10 @@ function Gallerie() {
                     </div>
                 </div>
             </main>
-            <Footer />
+            <footer className="rounded-lg">
+      <p className="text-center">Copyright &copy; 2024 Tous droits réservés.</p>
+      <p></p>
+    </footer>
         </>
     );
 }

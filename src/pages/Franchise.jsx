@@ -45,20 +45,20 @@ function Franchise() {
     ];
 
     return (
-        <main className="bg-gray-100 p-4 md:p-10 mt-20">
+        <><main className="bg-gray-100 p-4 md:p-10 mt-20">
             <HeaderPages />
             {sections.map((section, index) => (
                 <section key={index} className={`bg-white p-4 md:p-8 rounded-lg shadow-md mb-8 flex flex-col md:flex-row ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                     {section.image && (
-                        <img src={section.image} alt={section.alt} className={section.className}/>
+                        <img src={section.image} alt={section.alt} className={section.className} />
                     )}
                     {section.images && section.images.length > 0 && (
                         <div className="relative w-full md:w-2/3 flex flex-col justify-center">
                             <h2 className="text-2xl md:text-3xl font-bold mb-4">{section.title}</h2>
                             <p className="text-base md:text-lg text-gray-700" dangerouslySetInnerHTML={{ __html: section.text }}></p>
-                            <div className="flex flex-wrap justify-between">
-                                <img src={section.images[0]} alt={section.alt[0]} className="w-1/2 md:w-1/3 h-auto object-contain rounded-lg mb-4"/>
-                                <img src={section.images[1]} alt={section.alt[1]} className="w-1/2 md:w-1/3 h-auto object-contain rounded-lg"/>
+                            <div className="md:absolute md:right-0 md:top-0 md:flex md:flex-col">
+                                <img src={section.images[0]} alt={section.alt[0]} className="w-full md:w-64 h-auto object-contain rounded-lg mb-4" />
+                                <img src={section.images[1]} alt={section.alt[1]} className="w-full md:w-64 h-auto object-contain rounded-lg" />
                             </div>
                         </div>
                     )}
@@ -98,6 +98,10 @@ function Franchise() {
                 </ul>
             </section>
         </main>
+        <footer className=" rounded-lg">
+                <p className="text-center">Copyright &copy; 2024 Tous droits réservés.</p>
+                <p></p>
+            </footer></>
     );
 }
 

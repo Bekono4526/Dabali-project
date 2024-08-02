@@ -128,7 +128,7 @@ function Menu() {
   };
 
   return (
-    <main className="bg-gray-100 mt-10">
+    <><main className="bg-gray-100 mt-10">
       <HeaderPages />
       {/* Section Vidéo YouTube */}
       <div className="pt-20 px-4 md:px-10">
@@ -224,85 +224,80 @@ function Menu() {
         </button>
       </div>
 
-      {/* Pop-up pour le menu */}
       {showPopup && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-4 md:p-8 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3 max-h-screen overflow-y-auto">
-            <div className="flex justify-between mb-4">
-              <button
-                onClick={handleClosePopup}
-                className="bg-red-500 text-white px-4 py-2 rounded-md flex items-center"
-              >
-                <FiX className="mr-2" />
-                Fermer
-              </button>
-              <div className="flex items-center">
-                <FiShoppingCart className="text-2xl mr-2" />
-                <span className="text-xl">{cart.length} articles</span>
-              </div>
-            </div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Menu</h2>
-            {menuItems.map((category, index) => (
-              <div key={index} className="mb-6">
-                <h3 className="text-xl md:text-2xl font-semibold mb-2">
-                  {category.category}
-                </h3>
-                <div className="relative">
-                  <button
-                    onClick={() =>
-                      handleManualScroll(category.category, "left")
-                    }
-                    className="absolute left-2 top-1/2 transform -translate-y-1/2 h-10 w-10 bg-gray-200 text-gray-800 z-10 flex items-center justify-center rounded-full hover:bg-gray-300"
-                  >
-                    &#10094;
-                  </button>
-                  <div
-                    ref={scrollRefs[category.category]}
-                    className="flex overflow-x-auto whitespace-nowrap scroll-smooth gap-4 px-10 scroll-container"
-                    style={{ willChange: "scroll-position" }}
-                  >
-                    {category.items.map((item, idx) => (
-                      <div
-                        key={idx}
-                        className="min-w-full sm:min-w-80 flex-shrink-0 border rounded-md p-4 shadow-sm"
-                      >
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          className="w-full h-32 object-cover rounded-md mb-2"
-                        />
-                        <h4 className="text-xl font-semibold">{item.name}</h4>
-                        <p className="text-gray-700">
-                          {item.price === "Indisponible"
-                            ? item.price
-                            : `${item.price} FCFA`}
-                        </p>
-                        {item.price !== "Indisponible" && (
-                          <button
-                            onClick={() => addToCart(item)}
-                            className="bg-green-500 text-white px-2 py-1 rounded-md mt-2 flex items-center"
-                          >
-                            <FiShoppingCart className="mr-2" />
-                            Ajouter au panier
-                          </button>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                  <button
-                    onClick={() =>
-                      handleManualScroll(category.category, "right")
-                    }
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 h-10 w-10 bg-gray-200 text-gray-800 z-10 flex items-center justify-center rounded-full hover:bg-gray-300"
-                  >
-                    &#10095;
-                  </button>
+  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div className="bg-white p-4 md:p-8 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3 max-h-screen overflow-y-auto mt-4 md:mt-8">  {/* Ajout de mt-4 pour espace en haut */}
+      <div className="flex justify-between mb-4">
+        <button
+          onClick={handleClosePopup}
+          className="bg-red-500 text-white px-4 py-2 rounded-md flex items-center"
+        >
+          <FiX className="mr-2" />
+          Fermer
+        </button>
+        <div className="flex items-center">
+          <FiShoppingCart className="text-2xl mr-2" />
+          <span className="text-xl">{cart.length} articles</span>
+        </div>
+      </div>
+      <h2 className="text-2xl md:text-3xl font-bold mb-4">Menu</h2>
+      {menuItems.map((category, index) => (
+        <div key={index} className="mb-6">
+          <h3 className="text-xl md:text-2xl font-semibold mb-2">
+            {category.category}
+          </h3>
+          <div className="relative">
+            <button
+              onClick={() => handleManualScroll(category.category, "left")}
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 h-10 w-10 bg-gray-200 text-gray-800 z-10 flex items-center justify-center rounded-full hover:bg-gray-300"
+            >
+              &#10094;
+            </button>
+            <div
+              ref={scrollRefs[category.category]}
+              className="flex overflow-x-auto whitespace-nowrap scroll-smooth gap-4 px-10 scroll-container"
+              style={{ willChange: "scroll-position" }}
+            >
+              {category.items.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="min-w-full sm:min-w-80 flex-shrink-0 border rounded-md p-4 shadow-sm"
+                >
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-32 object-cover rounded-md mb-2" />
+                  <h4 className="text-xl font-semibold">{item.name}</h4>
+                  <p className="text-gray-700">
+                    {item.price === "Indisponible"
+                      ? item.price
+                      : `${item.price} FCFA`}
+                  </p>
+                  {item.price !== "Indisponible" && (
+                    <button
+                      onClick={() => addToCart(item)}
+                      className="bg-green-500 text-white px-2 py-1 rounded-md mt-2 flex items-center"
+                    >
+                      <FiShoppingCart className="mr-2" />
+                      Ajouter au panier
+                    </button>
+                  )}
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <button
+              onClick={() => handleManualScroll(category.category, "right")}
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 h-10 w-10 bg-gray-200 text-gray-800 z-10 flex items-center justify-center rounded-full hover:bg-gray-300"
+            >
+              &#10095;
+            </button>
           </div>
         </div>
-      )}
+      ))}
+    </div>
+  </div>
+)}
+
 
       {/* Pop-up pour le panier */}
       {showCart && (
@@ -397,6 +392,10 @@ function Menu() {
         </div>
       )}
     </main>
+    <footer className="rounded-lg">
+        <p className="text-center">Copyright &copy; 2024 Tous droits réservés.</p>
+        <p></p>
+      </footer></>
   );
 }
 
