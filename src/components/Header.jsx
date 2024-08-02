@@ -159,8 +159,8 @@ function Header() {
         } custom-md:hidden`}
         style={{ width: "80%", height: "100vh" }}
       >
-        <div className="flex flex-col items-start p-4 space-y-4 text-white font-custom h-full bg-dark-purple">
-          <h1 className="text-2xl font-bold text-white mb-6 cursor-pointer">
+        <div className="flex flex-col items-start p-4 space-y-4 text-darker-blue font-custom h-full bg-white">
+          <h1 className="text-2xl font-bold text-darker-blue mb-6 cursor-pointer">
             Bekono Sophie
           </h1>
           <Link
