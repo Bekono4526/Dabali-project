@@ -153,7 +153,7 @@ function Header() {
       </div>
 
       <div
-        className={`absolute inset-0 bg-dark-purple z-40 transform transition-transform duration-300 ease-in-out ${
+        className={`absolute inset-0 bg-white z-40 transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } custom-md:hidden`}
         style={{ width: "80%", height: "100vh" }}
