@@ -116,7 +116,7 @@ function FullMenuPage() {
 
       {showCart && (
   <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-    <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3 max-h-screen overflow-y-auto mt-10 md:mt-0">
+    <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3 max-h-screen overflow-y-auto mt-10 md:mt-0 scrollable">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl md:text-3xl font-bold">Votre Panier</h2>
         <button
@@ -212,6 +212,7 @@ function FullMenuPage() {
     </div>
   </div>
 )}
+
 
     </div>
   );

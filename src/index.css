@@ -308,5 +308,11 @@ img, video {
   background: #ffffff; /* Couleur du pouce au survol */
 }
 
+.scrollable {
+  max-height: 90vh; /* Adjust this value as needed */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+}
+
 
 

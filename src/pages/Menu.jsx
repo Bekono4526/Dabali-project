@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { FiShoppingCart } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import HeaderPages from "../components/HeaderPages";
 
 export const menuItems = [
@@ -54,8 +54,6 @@ export const menuItems = [
 
 function Menu() {
   const [selectedLocation, setSelectedLocation] = useState(null);
-  const [cart, setCart] = useState([]);
-  const navigate = useNavigate();
   const restaurantsRef = useRef(null);
 
   const locations = [
@@ -85,17 +83,11 @@ function Menu() {
     },
   ];
 
-  const handleMenuClick = () => {
-    navigate("/full-menu");
-  };
-
   const handleOrderNowClick = () => {
     if (restaurantsRef.current) {
       restaurantsRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
- 
 
   return (
     <main className="bg-gray-100 mt-10">
@@ -130,11 +122,8 @@ function Menu() {
               >
                 Commander Maintenant
               </button>
-              <button
-                className="bg-blue-500 text-white px-4 py-2 rounded-md"
-                onClick={handleMenuClick}
-              >
-                Voir la Carte Complète
+              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+                <Link to="/full-menu">Voir la Carte Complète</Link>
               </button>
             </div>
           </div>
@@ -172,12 +161,9 @@ function Menu() {
                   loading="lazy"
                   className="rounded-md mb-4"
                 ></iframe>
-                <button
-                  onClick={handleMenuClick}
-                  className="bg-blue-500 text-white px-4 py-2 rounded-md flex items-center"
-                >
+                <button className="bg-blue-500 text-white px-4 py-2 rounded-md flex items-center">
                   <FiShoppingCart className="mr-2" />
-                  Voir le menu
+                  <Link to="/full-menu">Voir le menu</Link>
                 </button>
               </>
             ) : (
