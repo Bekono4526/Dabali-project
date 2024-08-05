@@ -5,9 +5,9 @@ function Banner() {
     const images = [
         { 
             url: 'dabali1.jpg', 
-            title: 'Image 1', 
-            description: 'This is the first image.', 
-            link: '#link1' 
+            title: 'Dabali Express', 
+            description: 'une petite faim ? Decouvrez notre menu du jour ', 
+            link: './menu' 
         },
         { 
             url: 'dabali2.jpg', 
@@ -56,7 +56,7 @@ function Banner() {
                 </h2>
                 <p className='text-lg mb-4'>{images[currentImageIndex].description}</p>
                 <a href={images[currentImageIndex].link} className='text-lg text-blue-400 underline'>
-                    Learn more
+                    Decouvrir
                 </a>
             </div>
         </section>

@@ -51,6 +51,12 @@ function Home() {
       content: 'This is a brief summary of the third article.',
       imageUrl: 'dabali4.jpg',
     },
+    {
+      id: 4,
+      title: 'Article 4',
+      content: 'This is a brief summary of the third article.',
+      imageUrl: 'dabali4.jpg',
+    },
   ];
 
   return (
