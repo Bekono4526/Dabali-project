@@ -22,8 +22,8 @@ function Franchise() {
         {
             title: "Notre mission",
             text: "Nos plats, nos salades et nos desserts sont préparés chaque jour sur place dans chacun de nos restaurants. Servir rapidement des plats <strong>sains et savoureux typiquement africains</strong> dans un cadre et environnement sain est la mission accomplie chaque jour dans tous les restaurants Dabali Xpress. Chaque employé est sensibilisé sur cette promesse et travaille dans ce sens. Tous, des cuisiniers aux serveurs en passant par les caissiers s’évertuent chacun à son niveau à faire découvrir et apprécier les produits Dabali Xpress en mettant l’accent sur <strong>la qualité du service</strong>, la disponibilité effective des plats et la bonne tenue du cadre.",
-            images: ["Miem.jpeg", "mium.jpeg"],
-            alt: ["Notre mission 1", "Notre mission 2"],
+          
+    
             buttons: false,
             className: "w-full h-auto object-contain rounded-lg mb-4 md:mb-0"
         },
